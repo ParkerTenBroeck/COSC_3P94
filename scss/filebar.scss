@@ -2,8 +2,11 @@
 /* filebar container */
 .filebar {
   overflow: hidden;
-  background-color: $background-menu-color;
+  background-color: $filemenu-background-color;
   font-family: Arial;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: $filemenu-border;
 }
 
 /* Links inside the filebar */
@@ -59,14 +62,14 @@
 /* Add a red background color to filebar links on hover */
 .filebar a:hover,
 .dropdown:hover .dropbtn {
-  background-color: $background-menu-hover-color;
+  background-color: $filemenu-hover-color;
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: $background-dropdown-color;
+  background-color: $dropdown-background-color;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -85,7 +88,7 @@
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: $background-dropdown-hover;
+  background-color: $dropdown-hover-color;
   border-radius: 6px;
 }
 

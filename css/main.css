@@ -2,7 +2,10 @@
 .filebar {
   overflow: hidden;
   background-color: #181818;
-  font-family: Arial; }
+  font-family: Arial;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #454545; }
 
 /* Links inside the filebar */
 .filebar a {
