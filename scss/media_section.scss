@@ -1,0 +1,28 @@
+@import "colors";
+
+.media-section{
+    background-color: $background-content-color;
+}
+
+.media-section .imported-files{
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+.media-section .imported-files .file-preview{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+
+.media-section .top-text{
+    padding: 0;
+    margin-left: 10px;
+    margin: 0;
+    font-size: 14px;
+    color: $primary-text-color;
+    padding: 9px 01px;
+    text-decoration: none;
+}

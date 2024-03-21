@@ -1,0 +1,73 @@
+@import "colors";
+@import "filebar";
+@import "media_section";
+@import "player_section";
+@import "timeline_section";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+}
+
+.spliter-div-col{
+    width: 5px ;
+    height: 100% ;
+    /* margin: 3px 0; */
+    background: #9a969676;
+    /* position: absolute; */
+    left: var(--m-x);
+    /* margin-top: 9px ; */
+    cursor: col-resize;
+}
+
+.spliter-div-row{
+    height: 5px ;
+    width: 100% ;
+    /* margin: 0 3px; */
+    background: #9a969676;
+    /* position: absolute; */
+    left: var(--m-x);
+    /* margin-top: 9px; */
+    cursor: row-resize;
+}
+
+.vertical-div-split{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.vertical-div-split-left{
+    min-width: 20%;
+    max-width: 80%;
+}
+
+.vertical-div-split-right{
+    flex: 1 1 auto;
+    min-width: 20%;
+    max-width: 80%;
+}
+
+.horizontal-div-split{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.horizontal-div-split-top{
+    min-height: 20%;
+    max-height: 80%;
+}
+
+.horizontal-div-split-bottom{
+    flex: 1 1 auto;
+    min-height: 20%;
+    max-height: 80%;
+
+}

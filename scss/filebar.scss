@@ -1,7 +1,8 @@
+@import "colors";
 /* filebar container */
 .filebar {
   overflow: hidden;
-  background-color: #181818;
+  background-color: $background-menu-color;
   font-family: Arial;
 }
 
@@ -9,7 +10,7 @@
 .filebar a {
   float: left;
   font-size: 14px;
-  color: #ffffff;
+  color: $primary-text-color;
   text-align: center;
   padding: 9px 01px;
   text-decoration: none;
@@ -17,7 +18,7 @@
 
 .filebar .center {
   font-size: 14px;
-  color: #ffffff;
+  color: $primary-text-color;
   text-align: center;
   padding: 9px 10px;
   margin: 0;
@@ -28,7 +29,7 @@
 .filebar .right {
   float: right;
   font-size: 14px;
-  color: #ffffff;
+  color: $primary-text-color;
   text-align: center;
   padding: 9px 10px;
   margin: 0;
@@ -46,7 +47,7 @@
   font-size: 14px;
   border: none;
   outline: none;
-  color: #ffffff;
+  color: $primary-text-color;
   padding: 9px 10px;
   background-color: inherit;
   font-family: inherit;
@@ -58,14 +59,14 @@
 /* Add a red background color to filebar links on hover */
 .filebar a:hover,
 .dropdown:hover .dropbtn {
-  background-color: #3c3c3c;
+  background-color: $background-menu-hover-color;
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #1f1f1f;
+  background-color: $background-dropdown-color;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -75,7 +76,7 @@
 /* Links inside the dropdown */
 .dropdown-content a {
   float: none;
-  color: #ffffff;
+  color: $primary-text-color;
   /* padding: 12px 16px; */
   text-decoration: none;
   display: block;
@@ -84,7 +85,7 @@
 
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #026ec1;
+  background-color: $background-dropdown-hover;
   border-radius: 6px;
 }
 
