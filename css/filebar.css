@@ -1,0 +1,94 @@
+/* filebar container */
+.filebar {
+  overflow: hidden;
+  background-color: #181818;
+  font-family: Arial;
+}
+
+/* Links inside the filebar */
+.filebar a {
+  float: left;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  padding: 9px 01px;
+  text-decoration: none;
+}
+
+.filebar .center {
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  padding: 9px 10px;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.filebar .right {
+  float: right;
+  font-size: 14px;
+  color: #ffffff;
+  text-align: center;
+  padding: 9px 10px;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 14px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  padding: 9px 10px;
+  background-color: inherit;
+  font-family: inherit;
+  /* Important for vertical align on mobile phones */
+  margin: 0;
+  /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to filebar links on hover */
+.filebar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #3c3c3c;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1f1f1f;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 6px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: #ffffff;
+  /* padding: 12px 16px; */
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #026ec1;
+  border-radius: 6px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
