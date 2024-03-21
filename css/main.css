@@ -72,3 +72,16 @@ html, body {
     max-height: 80%;
 
 }
+
+.imported-files{
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+}
+
+.file-preview{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
