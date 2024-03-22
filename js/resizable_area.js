@@ -1,5 +1,5 @@
 
-{
+export default function init_resizable_area(){
     class ResizableArea{
         splitArea;
         leftContent;
@@ -55,8 +55,6 @@
     }
 
     for (const splitArea of document.querySelectorAll('.horizontal-div-split')){
-        
-        
         new ResizableArea(splitArea, true);
     }
 
