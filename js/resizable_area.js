@@ -47,7 +47,6 @@
 
         update(e){
             if(this.horizontal){
-                // I have no idea why this needs that (title bar?)
                 this.leftContent.style.height = e.clientY-this.splitArea.getBoundingClientRect().top  + 'px';
             }else{
                 this.leftContent.style.width = e.clientX-this.splitArea.getBoundingClientRect().left  + 'px';
