@@ -1,0 +1,97 @@
+@import "colors";
+
+.spliter-div-col{
+    width: 2px ;
+    height: 100% ;
+    background: $filemenu-border;
+    cursor: col-resize;
+}
+
+
+.spliter-div-col:hover{
+    transform: scale(2,1);
+    transition: 0.15s;
+    background: $dropdown-hover-color;
+}
+
+// Expand the area of the bar but not visible
+.spliter-div-col::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 100%;
+    transform: translate(-40%, 0%);
+    z-index:2;
+    // border:1px solid green; /* for demo purposes */ 
+}
+
+.vertical-div-split{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.vertical-div-split-left{
+    min-width: 20%;
+    max-width: 80%;
+}
+
+.vertical-div-split-right{
+    flex: 1 1 auto;
+    min-width: 20%;
+    max-width: 80%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.spliter-div-row{
+    height: 2px ;
+    width: 100% ;
+    background: $filemenu-border;
+    cursor: row-resize;
+}
+
+.spliter-div-row:hover{
+    transform: scale(1,2);
+    transition: 0.15s;
+    background: $dropdown-hover-color;
+}
+
+
+// Expand the area of the bar but not visible
+.spliter-div-row::before {
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 100%;
+    transform: translate(0%, -40%);
+    z-index:2;
+    // border:1px solid red; /* for demo purposes */ 
+}
+
+.horizontal-div-split{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.horizontal-div-split-top{
+    min-height: 20%;
+    max-height: 80%;
+}
+
+.horizontal-div-split-bottom{
+    flex: 1 1 auto;
+    min-height: 20%;
+    max-height: 80%;
+
+}

@@ -2,6 +2,7 @@
 
 .media-section{
     background-color: $content-background-color;
+    overflow-y:scroll;
 }
 
 .media-section .imported-files{
@@ -14,15 +15,27 @@
 .media-section .imported-files .file-preview{
     width: 100px;
     height: 100px;
-    background-color: aqua;
+    background-color: $badge-background;
+    cursor: grab;
 }
+
+.media-section .imported-files .file-preview:hover{
+    outline: $filemenu-hover-color;
+    outline-width: 2px;
+    outline-style: solid;
+    transition: 0.15s;
+}
+
+
 
 .media-section .top-text{
     padding: 0;
-    margin-left: 10px;
     margin: 0;
-    font-size: 14px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-weight: 400;
     color: $primary-text-color;
-    padding: 9px 01px;
+    padding-top: 6px;
+    padding-bottom: 3px;
     text-decoration: none;
 }

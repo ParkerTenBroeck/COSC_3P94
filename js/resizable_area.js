@@ -47,14 +47,17 @@
 
         update(e){
             if(this.horizontal){
-                this.leftContent.style.height = e.clientY  + 'px';
+                // I have no idea why this needs that (title bar?)
+                this.leftContent.style.height = e.clientY-this.splitArea.getBoundingClientRect().top  + 'px';
             }else{
-                this.leftContent.style.width = e.clientX  + 'px';
+                this.leftContent.style.width = e.clientX-this.splitArea.getBoundingClientRect().left  + 'px';
             }
         }
     }
 
     for (const splitArea of document.querySelectorAll('.horizontal-div-split')){
+        
+        
         new ResizableArea(splitArea, true);
     }
 
