@@ -1,9 +1,49 @@
 @import "colors";
 
-.player-section{
+
+.player-section {
     background-color: $content-background-color;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.player-section p{
+
+
+.player-section .video {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    // border-style: solid;
+    // border-color: $filemenu-border;
+    // border-width: 1px;
+}
+
+.player-section .controls {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.player-section .control-button{
+    border-radius: 4px;
     color: $primary-text-color;
+    width: 20px;
+}
+
+.player-section .control-button:hover{
+    background-color: $filemenu-hover-color;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.player-section .control-button:active{
+    background-color: $dropdown-hover-color;
+    transition: 0.1s;
 }

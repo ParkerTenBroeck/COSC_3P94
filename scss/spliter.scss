@@ -1,5 +1,23 @@
 @import "colors";
 
+//stationary 
+
+.separator-div-col{
+    width: 2px ;
+    height: 100% ;
+    background: $filemenu-border;
+}
+
+.separator-div-row{
+    height: 2px ;
+    width: 100% ;
+    background: $filemenu-border;
+}
+
+
+
+// movable
+
 .spliter-div-col{
     width: 2px ;
     height: 100% ;
