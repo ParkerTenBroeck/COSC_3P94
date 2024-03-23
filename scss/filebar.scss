@@ -1,7 +1,8 @@
 @import "colors";
 /* filebar container */
 .filebar {
-  overflow: hidden;
+  flex: 0 1 auto;
+  // overflow: hidden;
   background-color: $filemenu-background-color;
   font-family: Arial;
   border-bottom-style: solid;

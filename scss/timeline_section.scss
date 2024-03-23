@@ -1,8 +1,19 @@
 @import "colors";
 
 .timeline-section{
-    background-color: $content-background-color;
+    background-color: $badge-background;
+    display: flex;       
+    flex-flow: column;
 }
+
+.timeline-section .top-bar-container{  
+    display: flex;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 auto;
+}
+
 
 .timeline-section .time{
     color: $primary-text-color;
@@ -12,8 +23,8 @@
 }
 
 .timeline-section .timeline-rows-scroll{
-    // height: max-content;
     overflow-y: scroll;
+    flex: 1 1 auto;
 }
 
 .timeline-section .timeline-rows{

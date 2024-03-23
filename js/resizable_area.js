@@ -43,13 +43,28 @@ export default function init_resizable_area(){
                     myself.update(e);
                 }
             });
+            this.update({
+                clientY: splitArea.getBoundingClientRect().top + splitArea.getBoundingClientRect().height / 2,
+                clientX: splitArea.getBoundingClientRect().left + splitArea.getBoundingClientRect().width / 2,
+            })
         }
 
         update(e){
+
+            const bounding = this.splitArea.getBoundingClientRect();
+            const bounding2 = this.separatorBar.getBoundingClientRect();
+
+            console.log(bounding);
+            console.log(bounding2);
+            console.log(e.clientY + " " + e.clientx);
             if(this.horizontal){
-                this.leftContent.style.height = e.clientY-this.splitArea.getBoundingClientRect().top  + 'px';
+                const height =  e.clientY-bounding.top;
+                this.leftContent.style.height = height  + 'px';
+
+                this.rightContent.style.height = bounding.height-height-bounding2.height + 'px';
             }else{
-                this.leftContent.style.width = e.clientX-this.splitArea.getBoundingClientRect().left  + 'px';
+                this.leftContent.style.width = e.clientX-bounding.left  + 'px';  
+                this.rightContent.style.width = bounding.width-(e.clientX-bounding.left)-bounding2.width + 'px';
             }
         }
     }

@@ -11,25 +11,37 @@
 <body>
     <div id="blackout" style='display:block;'></div>
     
-    <div class="filebar loadable" src="parts/menu.html">
-        Loading...
-    </div>
+    <div class="page-contents">
+        <div class="filebar loadable" src="parts/menu.html">
+            Loading...
+        </div>
 
-    <div class="horizontal-div-split">
-        <div class="horizontal-div-split-top" style="min-height: 50%;height: 75%;">
-            <div class="vertical-div-split">
-                <div class="vertical-div-split-left media-section loadable" src="parts/media-section.html" style="width: 48%;">
+    
+        <div style="flex: 1 1 auto;" class="horizontal-div-split">
+            <!-- <div class="horizontal-div-split-top" style="height: 75%;">
+                       
+            </div>
+            <div class = "spliter-div-row"></div>
+            <div  class="horizontal-div-split-bottom timeline-section" src="parts/timeline-section.html">
+                Loading...
+            </div> -->
+            <div class="horizontal-div-split">
+                <div class="horizontal-div-split-top" style="height: 75%;">
+                    <div class="vertical-div-split">
+                        <div class="vertical-div-split-left media-section loadable" src="parts/media-section.html" style="width: 48%;">
+                            Loading...
+                        </div>
+                        <div class = "spliter-div-col"></div>
+                        <div class="vertical-div-split-right player-section loadable" src="parts/videoplayer-section.html">
+                            Loading...                    
+                        </div>
+                    </div>            
+                </div>
+                <div class = "spliter-div-row"></div>
+                <div  class="horizontal-div-split-bottom timeline-section loadable" src="parts/timeline-section.html">
                     Loading...
                 </div>
-                <div class = "spliter-div-col"></div>
-                <div class="vertical-div-split-right player-section loadable" src="parts/videoplayer-section.html">
-                    Loading...                    
-                </div>
-            </div>            
-        </div>
-        <div class = "spliter-div-row"></div>
-        <div  class="horizontal-div-split-bottom timeline-section loadable" src="parts/timeline-section.html">
-            Loading...
+            </div>
         </div>
     </div>
 

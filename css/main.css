@@ -1,6 +1,6 @@
 /* filebar container */
 .filebar {
-  overflow: hidden;
+  flex: 0 1 auto;
   background-color: #181818;
   font-family: Arial;
   border-bottom-style: solid;
@@ -156,7 +156,16 @@
   transition: 0.1s; }
 
 .timeline-section {
-  background-color: #1f1f1f; }
+  background-color: #313131;
+  display: flex;
+  flex-flow: column; }
+
+.timeline-section .top-bar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 auto; }
 
 .timeline-section .time {
   color: #d0d0d0;
@@ -165,7 +174,8 @@
   margin-left: 5px; }
 
 .timeline-section .timeline-rows-scroll {
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  flex: 1 1 auto; }
 
 .timeline-section .timeline-rows {
   display: flex;
@@ -219,17 +229,13 @@
 
 .vertical-div-split {
   display: flex;
-  height: 100%;
-  width: 100%; }
+  height: 100%; }
 
 .vertical-div-split-left {
-  min-width: 20%;
-  max-width: 80%; }
+  flex: 1 1 auto; }
 
 .vertical-div-split-right {
-  flex: 1 1 auto;
-  min-width: 20%;
-  max-width: 80%; }
+  flex: 1 1 auto; }
 
 .spliter-div-row {
   height: 2px;
@@ -253,26 +259,29 @@
 .horizontal-div-split {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%; }
 
 .horizontal-div-split-top {
-  min-height: 20%;
-  max-height: 80%; }
+  flex: 1 1 auto; }
 
 .horizontal-div-split-bottom {
-  flex: 1 1 auto;
-  min-height: 20%;
-  max-height: 80%; }
+  flex: 1 1 auto; }
 
 html, body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  width: 100vw;
+  height: 100vh;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  background-color: #1f1f1f; }
+
+.page-contents {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
 
 #blackout {
   background-color: #1f1f1f;
