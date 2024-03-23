@@ -50,6 +50,11 @@ export default function init_resizable_area(){
         }
 
         update(e){
+            if(this.horizontal){
+                this.splitArea.style.height = '100%';
+            }else{
+                this.splitArea.style.width = '100%';
+            }
 
             const bounding = this.splitArea.getBoundingClientRect();
             const bounding2 = this.separatorBar.getBoundingClientRect();
