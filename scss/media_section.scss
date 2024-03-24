@@ -52,7 +52,7 @@
     border-radius: 8px;
 }
 
-.media-section .imported-files .file-preview.active{
+.media-section .imported-files .file-preview.dragging{
     outline: $dropdown-hover-color;
     outline-width: 2px;
     outline-style: solid;

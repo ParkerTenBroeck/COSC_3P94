@@ -143,7 +143,7 @@
   border-radius: 8px;
 }
 
-.media-section .imported-files .file-preview.active {
+.media-section .imported-files .file-preview.dragging {
   outline: #026ec1;
   outline-width: 2px;
   outline-style: solid;
