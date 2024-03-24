@@ -46,15 +46,18 @@
 .vertical-div-split{
     display: flex;
     height: 100%;
-    // width: 100%;
 }
 
 .vertical-div-split-left{
     flex: 1 1 auto;
+    min-width: 20%;
+    max-width: 80%;
 }
 
 .vertical-div-split-right{
     flex: 1 1 auto;
+    min-width: 20%;
+    max-width: 80%;
 }
 
 
@@ -100,9 +103,12 @@
 
 .horizontal-div-split-top{
     flex: 1 1 auto;
+    min-height: 20%;
+    max-height: 80%;
 }
 
 .horizontal-div-split-bottom{
     flex: 1 1 auto;
-
+    min-height: 20%;
+    max-height: 80%;
 }
