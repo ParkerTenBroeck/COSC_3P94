@@ -31,7 +31,7 @@ async function init(){
 
     resizable_area.init();
     videoplayer.init();
-    dragAndDrop.init();
+    // dragAndDrop.init();
 
     document.getElementById("blackout").style.display = 'none';
 }

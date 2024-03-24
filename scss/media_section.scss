@@ -12,23 +12,53 @@
     gap: 10px;
 }
 
+[draggable=true] {
+    cursor: grab;
+}
+
 .media-section .imported-files .file-preview{
     width: 100px;
     height: 100px;
-    // background-color: $badge-background;
-    cursor: grab;
-    svg {
-        color: $light-icon;
-        width: 100%;
-        height: 100%;
-    }
+    display: flex;
+    flex-direction: column;
+    // cursor: grab;
+}
+
+
+.media-section .imported-files .file-preview .text{
+    flex: 1 1 auto;
+    color: $primary-text-color;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.media-section .imported-files .file-preview .icon{
+    // width: 100px;
+    // height: 100px;
+    // cursor: grab;
+    flex: 1 1 auto;
+    color: $light-icon;
+    width: 100%;
+    height: 100%;
 }
 
 .media-section .imported-files .file-preview:hover{
     outline: $filemenu-hover-color;
     outline-width: 2px;
     outline-style: solid;
-    transition: 0.15s;
+    transition: 0.125s;
+    background-color: $badge-background;
+    border-radius: 8px;
+}
+
+.media-section .imported-files .file-preview.active{
+    outline: $dropdown-hover-color;
+    outline-width: 2px;
+    outline-style: solid;
+    transition: 0.125s;
+    background-color: $badge-background;
+    border-radius: 8px;
 }
 
 .media-section .top-text{
