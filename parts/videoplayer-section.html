@@ -1,11 +1,17 @@
-<video id="video-player" class="video">
-  <source src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4" type = "video/mp4" />
-</video>
-<div class="controls">
-  <i id="skip-back" data-feather="skip-back" class="control-button" ></i>
-  <i id="fast-backward" data-feather="fast-forward" class="control-button rotate-around" ></i>
-  <i id="pause" data-feather="pause-circle" class="control-button"></i>
-  <i id="play" data-feather="play-circle" class="control-button"></i>
-  <i id="fast-forward" data-feather="fast-forward" class="control-button" ></i>
-  <i id="skip-forward" data-feather="skip-forward" class="control-button"></i>
+
+
+<div class="video">
+  <span class="spinner" id="spinner"></span>
+  <video width="640" height="360" id="video-player" preload="auto" poster="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NgYGD4DwABBAEAwS2OUAAAAABJRU5ErkJggg=="  >
+    <source src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4" type = "video/mp4" />
+  </video>
+
+  <div class="controls">
+    <i id="skip-back" data-feather="skip-back" class="control-button" ></i>
+    <i id="fast-backward" data-feather="fast-forward" class="control-button rotate-around" ></i>
+    <i id="pause" data-feather="pause-circle" class="control-button"></i>
+    <i id="play" data-feather="play-circle" class="control-button"></i>
+    <i id="fast-forward" data-feather="fast-forward" class="control-button" ></i>
+    <i id="skip-forward" data-feather="skip-forward" class="control-button"></i>
+  </div>
 </div>

@@ -147,12 +147,43 @@
 }
 
 .player-section .video {
-  margin-top: 10px;
   width: 100%;
   height: 100%;
-  flex: 1 1 min-content;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex: 1 1 max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.player-section video {
+  width: 100%;
+  height: 100%;
+}
+
+.player-section .video .spinner {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  transform: translate(0, -17px);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .player-section .controls {
   padding: 5px;
   display: flex;
@@ -179,7 +210,7 @@
   transition: 0.1s;
 }
 
-.rotate-around {
+.player-section .rotate-around {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);

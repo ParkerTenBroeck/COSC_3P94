@@ -89,7 +89,25 @@ class VideoPlayer{
             if(!myself.videoPlayer.paused)
             for(const item of myself.timeUpdates)
                 item(myself.videoPlayer.currentTime);
+
+            // if()
+            if(myself.videoPlayer.readyState != 4){
+                document.getElementById("spinner").style.display="unset"
+                myself.videoPlayer.classList.add('loading');
+            }else{
+                document.getElementById("spinner").style.display="none"
+                // myself.videoPlayer.classList.remove('loading');
+            }
         }, 16);
+
+        this.videoPlayer.addEventListener("onloadeddata", (e) => {
+                console.log(e);
+        });
+
+        this.videoPlayer.onloadedmetadata = () => {
+            this.videoPlayer.currentTime = 1;
+        };
+        this.videoPlayer.currentTime = 1;
     }
 
     setPlay(){
