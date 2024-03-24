@@ -1,12 +1,15 @@
-<img class="video" src="images/skeleton-dancing.gif"></img>
-  
+<!-- <img class="video" src="images/skeleton-dancing.gif"></img> -->
+<video id="video-player" class="video" autoplay="autoplay">
+  <source src="https://www.w3schools.com/html/mov_bbb.mp4" type = "video/mp4" />
+</video>
+
 <div id="video-player">
     
     <div class="controls">
-      <i data-feather="skip-back" class="control-button" ></i>
-      <i data-feather="pause" class="control-button"></i>
-      <i data-feather="play" class="control-button"></i>
-      <i data-feather="fast-forward" class="control-button" ></i>
-      <i data-feather="skip-forward" class="control-button"></i>
+      <i id="skip-back" data-feather="skip-back" class="control-button" ></i>
+      <i id="pause" data-feather="pause-circle" class="control-button"></i>
+      <i id="play" data-feather="play-circle" class="control-button"></i>
+      <i id="fast-forward" data-feather="fast-forward" class="control-button" ></i>
+      <i id="skip-forward" data-feather="skip-forward" class="control-button"></i>
     </div>
 </div>

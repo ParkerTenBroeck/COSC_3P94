@@ -1,5 +1,6 @@
-import init_resizable_area from "./resizable_area.js";
+import * as resizable_area from "./resizable_area.js";
 import "./feather-icons.js";
+import * as videoplayer from "./videoplayer.js";
 
 async function init(){
     // load all html 'parts'
@@ -26,7 +27,8 @@ async function init(){
 
 
     feather.replace();
-    init_resizable_area();
+    resizable_area.init();
+    videoplayer.init();
 
     document.getElementById("blackout").style.display = 'none';
 }

@@ -1,5 +1,5 @@
 
-export default function init_resizable_area(){
+export function init(){
     class ResizableArea{
         splitArea;
         leftContent;
@@ -59,9 +59,9 @@ export default function init_resizable_area(){
             const bounding = this.splitArea.getBoundingClientRect();
             const bounding2 = this.separatorBar.getBoundingClientRect();
 
-            console.log(bounding);
-            console.log(bounding2);
-            console.log(e.clientY + " " + e.clientx);
+            // console.log(bounding);
+            // console.log(bounding2);
+            // console.log(e.clientY + " " + e.clientx);
             if(this.horizontal){
                 const height =  e.clientY-bounding.top;
                 this.leftContent.style.height = height  + 'px';
