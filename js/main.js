@@ -1,4 +1,5 @@
 import * as resizable_area from "./resizable_area.js";
+import * as dragAndDrop from "./drag-and-drop.js";
 import "./feather-icons.js";
 import * as videoplayer from "./videoplayer.js";
 
@@ -27,8 +28,10 @@ async function init(){
 
 
     feather.replace();
+
     resizable_area.init();
     videoplayer.init();
+    dragAndDrop.init();
 
     document.getElementById("blackout").style.display = 'none';
 }
