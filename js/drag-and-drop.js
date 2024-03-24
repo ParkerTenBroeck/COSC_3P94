@@ -1,5 +1,5 @@
 var current_dropzone = null;
-
+var dropzone_hover = false;
 
 export function init(){
     class Draggable{
@@ -13,11 +13,11 @@ export function init(){
 
 
             this.draggableArea.addEventListener('mouseenter', function (e) {
-                console.log("entered");
+                // console.log("entered");
                 myself.isHover = true;
             });
             this.draggableArea.addEventListener('mouseout', function (e) {
-                console.log("exited");
+                // console.log("exited");
                 myself.isHover = false;
             });
 
@@ -29,8 +29,8 @@ export function init(){
             }, true);
 
             document.addEventListener('mouseup', function (e) {
-                if (myself.isDown) {
-                    console.log("dropping ", myself, "on ", current_dropzone);
+                if (myself.isDown && dropzone_hover) {
+                    // console.log("dropping ", myself, "on ", current_dropzone);
                     current_dropzone.drop(myself, e);
                 }
                 myself.isDown = false;
@@ -46,14 +46,16 @@ export function init(){
             const myself = this;
             this.dropArea = dropArea;
             this.dropArea.addEventListener('mouseenter', function (e) {
-                console.log("entered");
+                // console.log("entered");
                 myself.isHover = true;
                 current_dropzone = myself;
+                dropzone_hover = true;
             });
             this.dropArea.addEventListener('mouseout', function (e) {
-                console.log("exited");
+                // console.log("exited");
                 myself.isHover = false;
                 current_dropzone = null;
+                dropzone_hover = false
             });
             
         }
