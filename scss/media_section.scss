@@ -17,6 +17,11 @@
     height: 100px;
     background-color: $badge-background;
     cursor: grab;
+    svg {
+        color: $light-icon;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .media-section .imported-files .file-preview:hover{
