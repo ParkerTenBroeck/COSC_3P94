@@ -108,6 +108,10 @@ class VideoPlayer{
             this.videoPlayer.currentTime = 1;
         };
         this.videoPlayer.currentTime = 1;
+
+        document.addEventListener("keypress", (e) => {
+            
+        });
     }
 
     setPlay(){

@@ -50,7 +50,8 @@
 
 .timeline-section .timeline-left-icon{
     height: 100%;
-    width:auto;
+    width: auto;
+    color: $light-icon
 }
 
 .timeline-section .timeline-container{
@@ -99,8 +100,12 @@
 }
 
 .timeline-section .timeline-vert-divider{
-    border-left: 2px solid white;
+    border-left: 2px solid $light-icon;
     height: 40%;
     margin-top: 5px;
     // padding-left: 9px;
+}
+
+.gear-icon-transition{
+    color: $light-icon;
 }
