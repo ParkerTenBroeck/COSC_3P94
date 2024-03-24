@@ -28,6 +28,7 @@ class VideoPlayer{
         this.pause.addEventListener("click", (e) => {
             myself.setPaused();
         });
+        this.pause.style.display = 'none';
 
         this.skipBack = this.playersection.querySelector("[id='skip-back']");
         this.skipBack.addEventListener("click", (e) => {
@@ -48,6 +49,16 @@ class VideoPlayer{
             for(const item of myself.skipForwardUpdates){
                 item();
             }
+        });
+
+        this.registerPauseUpdate(() => {
+            myself.pause.style.display = 'none';
+            myself.play.style.display = '';
+        });
+
+        this.registerPlayUpdate(() => {
+            myself.pause.style.display = '';
+            myself.play.style.display = 'none';
         });
 
         this.videoPlayer.addEventListener("ended", (e) => {

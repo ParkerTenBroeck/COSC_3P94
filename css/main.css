@@ -165,7 +165,7 @@
 .player-section .control-button {
   border-radius: 4px;
   color: #d0d0d0;
-  width: 20px;
+  width: 25px;
 }
 
 .player-section .control-button:hover {
@@ -266,6 +266,9 @@
 .timeline-section .divider-and-gear svg {
   height: 20px;
   width: 20px;
+}
+.timeline-section .divider-and-gear a {
+  padding: 9px 1px;
 }
 
 .timeline-section .timeline-vert-divider {
