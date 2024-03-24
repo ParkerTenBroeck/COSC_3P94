@@ -132,7 +132,7 @@ class VideoPlayer{
     }
 }
 
-const videoplayer = new VideoPlayer();
+export const videoplayer = new VideoPlayer();
 
 
 export function init(){
