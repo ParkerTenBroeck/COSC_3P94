@@ -179,6 +179,14 @@
   transition: 0.1s;
 }
 
+.rotate-around {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
 .timeline-section {
   background-color: #313131;
   display: flex;

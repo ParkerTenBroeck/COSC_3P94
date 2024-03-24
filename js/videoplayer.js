@@ -4,14 +4,9 @@
 
 class VideoPlayer{
 
-    time = 0;
-    paused = true;
     timeUpdates = [];
     playUpdates = [];
     pauseUpdates = [];
-    skipBackUpdates = [];
-    fastFowardUpdates = [];
-    skipForwardUpdates = [];
 
     init() {
         const myself = this;
@@ -32,23 +27,28 @@ class VideoPlayer{
 
         this.skipBack = this.playersection.querySelector("[id='skip-back']");
         this.skipBack.addEventListener("click", (e) => {
-            for(const item of myself.skipBackUpdates){
-                item();
-            }
+            myself.setTime(0);
         });
 
         this.fastFoward = this.playersection.querySelector("[id='fast-forward']");
         this.fastFoward.addEventListener("click", (e) => {
-            for(const item of myself.fastFowardUpdates){
-                item();
-            }
+            // for(const item of myself.fastFowardUpdates){
+            //     item();
+            // }
+            myself.addTime(10);
+        });
+
+        this.fastBackward = this.playersection.querySelector("[id='fast-backward']");
+        this.fastBackward.addEventListener("click", (e) => {
+            // for(const item of myself.fastBackwardUpdates){
+            //     item();
+            // }
+            myself.addTime(-10);
         });
 
         this.skipFoward = this.playersection.querySelector("[id='skip-forward']");
         this.skipFoward.addEventListener("click", (e) => {
-            for(const item of myself.skipForwardUpdates){
-                item();
-            }
+            myself.setTime(myself.videoPlayer.duration);
         });
 
         this.registerPauseUpdate(() => {
@@ -77,26 +77,19 @@ class VideoPlayer{
         const zeroPad = (num, places) => String(num).padStart(places, '0')
         this.registerTimeUpdate((t) => {
             
-            let ms = zeroPad(Math.floor(t % 1000), 3);
-            let s = zeroPad(Math.floor((t / 1000) % 60), 2);
-            let m = zeroPad(Math.floor((t / (1000 * 60)) % 60), 2);
-            let h = zeroPad(Math.floor((t / (1000 * 60 * 60)) % 100), 2);
+            let ms = zeroPad(Math.floor((t*1000) % 1000), 3);
+            let s = zeroPad(Math.floor(t % 60), 2);
+            let m = zeroPad(Math.floor((t / 60) % 60), 2);
+            let h = zeroPad(Math.floor((t / (60 * 60)) % 100), 2);
             document.getElementById("time").innerHTML = h+"."+m+"."+s+":"+ms;
         })
 
 
-        {
-
-            var start = Date.now();
-            this.interval = setInterval(function() {
-                const now = Date.now();
-                if(!myself.paused){
-                    myself.addTime(now-start);
-                }
-                start = now;
-
-            }, 16);
-        }
+        this.interval = setInterval(function() {
+            if(!myself.videoPlayer.paused)
+            for(const item of myself.timeUpdates)
+                item(myself.videoPlayer.currentTime);
+        }, 16);
     }
 
     setPlay(){
@@ -115,19 +108,17 @@ class VideoPlayer{
     }
 
     addTime(time){
-        this.time += time;
-
-        for(const item of this.timeUpdates){
-            item(this.time);
-        }
+        this.videoPlayer.currentTime += time;
+        
+        for(const item of this.timeUpdates)
+            item(this.videoPlayer.currentTime);
     }
 
     setTime(time){
-        this.time = time;
-
-        for(const item of this.timeUpdates){
-            item(this.time);
-        }
+        this.videoPlayer.currentTime = time;
+        
+        for(const item of this.timeUpdates)
+            item(this.videoPlayer.currentTime);
     }
 
     registerTimeUpdate(update){
