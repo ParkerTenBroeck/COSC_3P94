@@ -1,4 +1,5 @@
 import init_resizable_area from "./resizable_area.js";
+import init_drag_and_drop from "./drag-and-drop.js";
 import "./feather-icons.js";
 
 async function init(){
@@ -27,6 +28,7 @@ async function init(){
 
     feather.replace();
     init_resizable_area();
+    init_drag_and_drop();
 
     document.getElementById("blackout").style.display = 'none';
 }
