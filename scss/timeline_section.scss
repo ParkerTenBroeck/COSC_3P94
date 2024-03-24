@@ -33,6 +33,7 @@
 }
 
 .timeline-section .timeline-row{
+    display: flex;
     height: 100px;
     border-bottom-color: $filemenu-border;
     border-bottom-style: solid;
