@@ -2,14 +2,14 @@
 
 $timeline-height: 110px;
 
-.timeline-section{
+.timeline-section {
     background-color: $badge-background;
-    display: flex;       
+    display: flex;
     flex-flow: column;
 }
 
-.timeline-section .top-bar-container{  
-    display: flex;   
+.timeline-section .top-bar-container {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -17,26 +17,26 @@ $timeline-height: 110px;
 }
 
 
-.timeline-section .time{
+.timeline-section .time {
     color: $primary-text-color;
     padding: 0;
     margin: 0;
     margin-left: 5px;
 }
 
-.timeline-section .timeline-rows-scroll{
+.timeline-section .timeline-rows-scroll {
     overflow-y: scroll;
     flex: 1 1 auto;
     display: flex;
 }
 
-.timeline-section .timeline-rows{
+.timeline-section .timeline-rows {
     display: flex;
     flex-direction: column;
 }
 
 
-.timeline-section .timeline-row{
+.timeline-section .timeline-row {
     display: flex;
     height: $timeline-height;
     flex: 0 0 auto;
@@ -44,18 +44,19 @@ $timeline-height: 110px;
 }
 
 
-.timeline-section .timeline-setting-row-separator{
-    border-bottom-color: $filemenu-border;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-}
-.timeline-section .timeline-editable-row-separator{
+.timeline-section .timeline-setting-row-separator {
     border-bottom-color: $filemenu-border;
     border-bottom-style: solid;
     border-bottom-width: 2px;
 }
 
-.timeline-section .timeline-left-setting{
+.timeline-section .timeline-editable-row-separator {
+    border-bottom-color: $filemenu-border;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+.timeline-section .timeline-left-setting {
     height: 100%;
     width: min-content;
     border-right-color: $filemenu-border;
@@ -63,25 +64,25 @@ $timeline-height: 110px;
     border-right-width: 2px;
 }
 
-.timeline-section .timeline-left-icon{
+.timeline-section .timeline-left-icon {
     height: 100%;
     width: auto;
     color: $light-icon
 }
 
-.timeline-section .timeline-container{
+.timeline-section .timeline-container {
     // width: 100%;
     // max-height: 100%;
     padding-left: 4px;
     display: flex;  
 }
 
-.timeline-section .timeline-item{
+.timeline-section .timeline-item {
     height: 100%;
     display: flex;
 }
 
-.timeline-section .name-container{
+.timeline-section .name-container {
     // width: 200px;
     // max-height: calc(100% - 15px - 2px);
     // height: 100%;
@@ -101,22 +102,22 @@ $timeline-height: 110px;
     filter: sepia(100%) saturate(0%) brightness(200%) hue-rotate(330deg);
 }
 
-.timeline-section .name-container:hover{
+.timeline-section .name-container:hover {
     border-color: $light-icon;
     transition: 0.15s
 }
 
-.timeline-section .name-container:active{
+.timeline-section .name-container:active {
     border-color: $dropdown-hover-color;
     transition: 0.15s
 }
 
-.timeline-section .divider-and-gear .gear-icon-transition{
+.timeline-section .divider-and-gear .gear-icon-transition {
     height: 20px;
     width: 20px;
 }
 
-.timeline-section .divider-and-gear .gear-icon-transition:hover{
+.timeline-section .divider-and-gear .gear-icon-transition:hover {
     background-color: #535353;
     border-radius: 50%;
     outline-color: #535353;
@@ -124,45 +125,116 @@ $timeline-height: 110px;
     outline-width: 2px;
 }
 
-.timeline-section .divider-and-gear .gear-icon-transition:active{
+.timeline-section .divider-and-gear .gear-icon-transition:active {
     // background-color: $dropdown-hover-color;
     outline-color: $dropdown-hover-color;
     outline-style: solid;
     outline-width: 2px;
 }
 
-.timeline-section .divider-and-gear{
+.timeline-section .divider-and-gear {
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
 
     
     margin-top: -20px;
 }
 
-.timeline-section .timeline-vert-divider{
+.timeline-section .timeline-vert-divider {
     border-left: 2px solid $light-icon;
     height: 40%;
     margin-top: 5px;
 }
 
-.gear-icon-transition{
+.gear-icon-transition {
     color: $light-icon;
 }
 
 
-.timeline-section .timeline-settings-rows{
+.timeline-section .timeline-settings-rows {
     display: flex;
     flex-direction: column;
     width: max-content;
 }
 
-.timeline-section .timeline-editable-rows{
+.timeline-section .timeline-editable-rows {
     height: min-content;
     display: grid;
     flex-direction: column;
     overflow-x: scroll;
-    padding-bottom: 14px;  
+    padding-bottom: 14px;
     width: 100%;
+}
+
+.timeline-section .timeline-gear-button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* The dropdown container */
+.timeline-section .timeline-dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+
+/* Dropdown button */
+.timeline-section .timeline-dropdown .timeline-gear-button {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: $primary-text-color;
+    // padding: 9px 10px;
+    background-color: inherit;
+    font-family: inherit;
+    /* Important for vertical align on mobile phones */
+    margin: 0;
+    /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to filebar links on hover */
+.timeline-section a:hover,
+.dropdown:hover .dropbtn {
+    background-color: $filemenu-hover-color;
+}
+
+/* Dropdown content (hidden by default) */
+.timeline-section .gear-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $dropdown-background-color;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 6px;
+
+    // top: 100%;
+}
+
+/* Links inside the dropdown */
+.timeline-section .gear-dropdown-content a {
+    float: none;
+    color: $primary-text-color;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.timeline-section .gear-dropdown-content a:hover {
+    background-color: $dropdown-hover-color;
+    border-radius: 6px;
+}
+
+/* Show the dropdown menu on hover */
+.timeline-section .timeline-dropdown:hover .gear-dropdown-content {
+    display: block;
 }
