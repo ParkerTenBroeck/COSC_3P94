@@ -32,17 +32,11 @@ class VideoPlayer{
 
         this.fastFoward = this.playersection.querySelector("[id='fast-forward']");
         this.fastFoward.addEventListener("click", (e) => {
-            // for(const item of myself.fastFowardUpdates){
-            //     item();
-            // }
             myself.addTime(10);
         });
 
         this.fastBackward = this.playersection.querySelector("[id='fast-backward']");
         this.fastBackward.addEventListener("click", (e) => {
-            // for(const item of myself.fastBackwardUpdates){
-            //     item();
-            // }
             myself.addTime(-10);
         });
 
@@ -109,21 +103,38 @@ class VideoPlayer{
         };
         this.videoPlayer.currentTime = 1;
 
-        document.addEventListener("keypress", (e) => {
-            
+        document.addEventListener('keyup', event => {
+            if (event.code === 'Space') {
+                if(myself.videoPlayer.paused)
+                    myself.setPlay();
+                else
+                    myself.setPaused();
+            }
+            if (event.code == "ArrowRight"){
+                if (event.shiftKey){
+                    myself.setTime(myself.videoPlayer.duration);
+                }else{
+                    myself.addTime(10);
+                }
+            }
+
+            if (event.code == "ArrowLeft"){
+                if (event.shiftKey){
+                    myself.setTime(0);
+                }else{
+                    myself.addTime(-10);
+                }
+            }
         });
     }
 
     setPlay(){
-        this.paused = false;
-
         for(const item of this.playUpdates){
             item();
         }
     }
 
     setPaused(){
-        this.paused = true;
         for(const item of this.pauseUpdates){
             item();
         }
