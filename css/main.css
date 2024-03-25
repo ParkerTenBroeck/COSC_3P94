@@ -328,11 +328,22 @@
 .timeline-section .name-container {
   background-color: #181818;
   color: #d0d0d0;
-  border: 2px solid #026ec1;
+  border: 2px solid #313131;
   border-radius: 10px;
+  user-select: none;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.timeline-section .name-container:hover {
+  border-color: #868686;
+  transition: 0.15s;
+}
+
+.timeline-section .name-container:active {
+  border-color: #026ec1;
+  transition: 0.15s;
 }
 
 .timeline-section .divider-and-gear .gear-icon-transition {
@@ -380,10 +391,11 @@
 
 .timeline-section .timeline-editable-rows {
   height: min-content;
-  display: flex;
+  display: grid;
   flex-direction: column;
   overflow-x: scroll;
   padding-bottom: 14px;
+  width: 100%;
 }
 
 .separator-div-col {
@@ -490,6 +502,7 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 400;
   background-color: #1f1f1f;
+  scrollbar-width: thin;
 }
 
 .page-contents {
