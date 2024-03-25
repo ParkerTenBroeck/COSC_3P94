@@ -1,5 +1,7 @@
 @import "colors";
 
+$timeline-height: 110px;
+
 .timeline-section{
     background-color: $badge-background;
     display: flex;       
@@ -25,6 +27,7 @@
 .timeline-section .timeline-rows-scroll{
     overflow-y: scroll;
     flex: 1 1 auto;
+    display: flex;
 }
 
 .timeline-section .timeline-rows{
@@ -32,12 +35,25 @@
     flex-direction: column;
 }
 
+
 .timeline-section .timeline-row{
     display: flex;
-    height: 110px;
+    height: $timeline-height;
+    flex: 0 0 auto;
+    width: max-content;
+}
+
+
+.timeline-section .timeline-setting-row-separator{
     border-bottom-color: $filemenu-border;
     border-bottom-style: solid;
     border-bottom-width: 2px;
+}
+.timeline-section .timeline-editable-row-separator{
+    border-bottom-color: $filemenu-border;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    // width: 99999999999px;
 }
 
 .timeline-section .timeline-left-setting{
@@ -55,11 +71,12 @@
 }
 
 .timeline-section .timeline-container{
-    width: 100%;
-    max-height: 100%;
+    // width: 100%;
+    // max-height: 100%;
     padding-top: 18px;
     padding-left: 4px;
-    display: flex;
+    display: flex;  
+    padding-bottom: 10px;
 }
 
 .timeline-section .timeline-item{
@@ -68,8 +85,8 @@
 }
 
 .timeline-section .name-container{
-    width: 200px;
-    max-height: calc(100% - 15px - 2px);
+    // width: 200px;
+    // max-height: calc(100% - 15px - 2px);
     // height: 100%;
     background-color: $filemenu-background-color;
     color: $primary-text-color;
@@ -81,20 +98,32 @@
     align-items:center;
 }
 
+.timeline-section .divider-and-gear .gear-icon-transition{
+    height: 20px;
+    width: 20px;
+}
+
+.timeline-section .divider-and-gear .gear-icon-transition:hover{
+    background-color: #535353;
+    border-radius: 50%;
+    outline-color: #535353;
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+.timeline-section .divider-and-gear .gear-icon-transition:active{
+    // background-color: $dropdown-hover-color;
+    outline-color: $dropdown-hover-color;
+    outline-style: solid;
+    outline-width: 2px;
+}
+
 .timeline-section .divider-and-gear{
     display: flex;
     flex-direction: column;
     justify-content:center;
     align-items:center;
 
-    svg {
-        height: 20px;
-        width: 20px;
-    }
-
-    a {
-        padding: 9px 1px;
-    }
     
     margin-top: -40px;
 }
@@ -103,9 +132,23 @@
     border-left: 2px solid $light-icon;
     height: 40%;
     margin-top: 5px;
-    // padding-left: 9px;
 }
 
 .gear-icon-transition{
     color: $light-icon;
+}
+
+
+.timeline-section .timeline-settings-rows{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+}
+
+.timeline-section .timeline-editable-rows{
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+    padding-bottom: 14px;
 }
