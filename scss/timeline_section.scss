@@ -72,10 +72,8 @@ $timeline-height: 110px;
 .timeline-section .timeline-container{
     // width: 100%;
     // max-height: 100%;
-    padding-top: 18px;
     padding-left: 4px;
     display: flex;  
-    padding-bottom: 10px;
 }
 
 .timeline-section .timeline-item{
@@ -95,6 +93,12 @@ $timeline-height: 110px;
     display:flex;
     justify-content:center;
     align-items:center;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+.timeline-section .name-container.drag-hover{
+    filter: sepia(100%) saturate(0%) brightness(200%) hue-rotate(330deg);
 }
 
 .timeline-section .name-container:hover{
@@ -134,7 +138,7 @@ $timeline-height: 110px;
     align-items:center;
 
     
-    margin-top: -40px;
+    margin-top: -20px;
 }
 
 .timeline-section .timeline-vert-divider{

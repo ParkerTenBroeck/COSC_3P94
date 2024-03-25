@@ -1,0 +1,38 @@
+@import "colors";
+
+.floating-menu{
+
+    position: absolute;
+    z-index: 999999;
+    background-color: $content-background-color;
+    color: $primary-text-color;
+    user-select: none;
+    left: 200%;
+    transform: translate(-50%, -50%);
+
+    outline-color: $dropdown-hover-color;
+    outline-width: 2px;
+    outline-style: solid;
+
+    border-radius: 5px;
+    padding: 5px
+    
+}
+
+.floating-menu.hide{
+    animation: cssAnimation 5s forwards;
+}
+
+
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;
+        display: none;}
+}
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;
+        display: none;}
+}
