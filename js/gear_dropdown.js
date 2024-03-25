@@ -10,6 +10,15 @@ export function init() {
 
           newNode.style.left = rect.left + 'px';
           newNode.style.top = rect.bottom + 'px';
+
+          var w = window.innerWidth;
+          
+          newNode.style.transform = "translate(-"+ (rect.left/w)*100 +"%)";
+          
+          if (rect.left > w/2) { 
+            newNode.style.transform = "translate(-90%)"
+          }
+          
         }, false);
 
         newNode.innerHTML = `
