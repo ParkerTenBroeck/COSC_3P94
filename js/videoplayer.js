@@ -94,10 +94,6 @@ class VideoPlayer{
             }
         }, 16);
 
-        this.videoPlayer.addEventListener("onloadeddata", (e) => {
-                console.log(e);
-        });
-
         this.videoPlayer.onloadedmetadata = () => {
             this.videoPlayer.currentTime = 1;
         };

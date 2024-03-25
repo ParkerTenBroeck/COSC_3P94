@@ -32,7 +32,6 @@ export function init(){
         });
         item.addEventListener("drop", event => {
             event.preventDefault();
-            console.log(event.dataTransfer);
             if (dragSource.classList.contains("file-preview")){
                 menu.fadableMenu(
                     '<div style="display:flex;flex-direction:column;align-items:center;width:14em;text-align:center">\

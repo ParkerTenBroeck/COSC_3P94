@@ -2,7 +2,7 @@ import * as resizable_area from "./resizable_area.js";
 import * as dragAndDrop from "./drag-and-drop.js";
 import "./feather-icons.js";
 import * as videoplayer from "./videoplayer.js";
-import * as gearDropdown from "./gear_dropdown.js";
+import * as gearMenu from "./gear-menu.js";
 
 async function init(){
     // load all html 'parts'
@@ -34,7 +34,7 @@ async function init(){
     videoplayer.init();
     dragAndDrop.init();
 
-    gearDropdown.init();
+    gearMenu.init();
 
     document.getElementById("blackout").style.display = 'none';
 }

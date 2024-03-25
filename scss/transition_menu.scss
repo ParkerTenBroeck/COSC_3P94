@@ -1,0 +1,76 @@
+@import "colors";
+
+.transition-menu{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0.5, 0.5, 0.5, 0.5);
+    z-index: 9999999999999;
+ 
+
+    .transition-menu-content{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0.6em;
+        background-color: $content-background-color;
+        border-radius: 5px;
+        border-width: 2px;
+        border-color: $filemenu-border;
+        border-style: solid;
+        color: $primary-text-color;
+    }
+
+    .title{
+        text-align: center;
+        width: 100%;
+        display: block;
+
+        
+        border-bottom-color: $filemenu-border;
+        border-bottom-style: solid;
+        border-bottom-width: 2px;
+    }
+
+    .dropdown{
+
+        background-color: $filemenu-background-color;
+        border-style: solid;
+        border-radius: 5px;
+        border-color: $filemenu-border;
+        border-width: 2px;
+        color: $primary-text-color;
+        margin-left: 5px;
+    }
+
+    .dropdown:hover{
+        background-color: $filemenu-hover-color;
+    }
+
+    button{
+        background-color: $filemenu-background-color;
+        border-style: solid;
+        border-radius: 5px;
+        border-color: $filemenu-border;
+        border-width: 2px;
+        color: $primary-text-color
+    }
+
+    button:hover{
+        background-color: $filemenu-hover-color;
+    }
+
+    button:active{
+        background-color: $filemenu-hover-color;
+        border-color: $dropdown-hover-color;
+    }
+}
+
+.transition-menu.show{
+    display: unset;
+}
+
+.transition-menu.hide{
+    display: none;
+}

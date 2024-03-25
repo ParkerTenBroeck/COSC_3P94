@@ -23,7 +23,6 @@
     animation: cssAnimation 3s forwards;
 }
 
-
 @keyframes cssAnimation {
     0%   {opacity: 1;}
     90%  {opacity: 1;}
@@ -36,6 +35,7 @@
         transform: translate(500%, 500%);
     } 
 }
+
 @-webkit-keyframes cssAnimation {
     0%   {opacity: 1;}
     90%  {opacity: 1;}
