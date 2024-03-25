@@ -13,7 +13,7 @@ export function init() {
 
           var w = window.innerWidth;
           
-          newNode.style.transform = "translate(-"+ (rect.left/w)*100 +"%)";
+          newNode.style.transform = "translate(-"+ (rect.left/w)*100 +"%, -5%)";
           
           if (rect.left > w/2) { 
             newNode.style.transform = "translate(-90%)"
