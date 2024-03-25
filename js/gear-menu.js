@@ -17,6 +17,12 @@ export function init() {
       }
     });
 
+    document.addEventListener("mouseup", event => {
+      if (!document.querySelector(".transition-menu-content").contains(event.target)){
+        hide(); 
+      }
+    });
+
     for (const gearButton of document.querySelectorAll('.timeline-gear-button')){
 
         gearButton.addEventListener("click", (event) =>{
