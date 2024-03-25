@@ -14,7 +14,7 @@
 
 .player-section .video {
     width: 100%;
-    height: 100%;
+    height: 90%;
     margin-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -24,11 +24,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .player-section video {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 90%;
 }
 
 .player-section .video .spinner{

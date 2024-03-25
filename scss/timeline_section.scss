@@ -25,7 +25,7 @@ $timeline-height: 110px;
 }
 
 .timeline-section .timeline-rows-scroll {
-    overflow-y: scroll;
+    overflow-y: auto;
     flex: 1 1 auto;
     display: flex;
 }
@@ -163,7 +163,7 @@ $timeline-height: 110px;
     height: min-content;
     display: grid;
     flex-direction: column;
-    overflow-x: scroll;
+    overflow-x: auto;
     padding-bottom: 14px;
     width: 100%;
 }
