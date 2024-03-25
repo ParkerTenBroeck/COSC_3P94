@@ -592,9 +592,14 @@
   90% {
     opacity: 1;
   }
-  100% {
+  99% {
     opacity: 0;
     display: none;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    display: none;
+    transform: translate(500%, 500%);
   }
 }
 @-webkit-keyframes cssAnimation {
@@ -604,9 +609,14 @@
   90% {
     opacity: 1;
   }
-  100% {
+  99% {
     opacity: 0;
     display: none;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    display: none;
+    transform: translate(500%, 500%);
   }
 }
 html, body {
