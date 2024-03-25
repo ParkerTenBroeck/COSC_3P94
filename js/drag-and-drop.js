@@ -34,9 +34,19 @@ export function init(){
             event.preventDefault();
             console.log(event.dataTransfer);
             if (dragSource.classList.contains("file-preview")){
-                menu.fadableMenu('<i data-feather="alert-circle"></i> This will add new content to timeline', event.clientX, event.clientY);
+                menu.fadableMenu(
+                    '<div style="display:flex;flex-direction:column;align-items:center;width:14em;text-align:center">\
+                    <i data-feather="alert-circle" style="margin-bottom:10px"></i>\
+                    This action will add/insert new clips onto the timeline\
+                </div>', 
+                event.clientX, event.clientY);
             }else if (dragSource.classList.contains("timeline-drag-target")){
-                menu.fadableMenu('<div style="display:flex;flex-direction:column;justify-content:center"><i data-feather="alert-circle"></i>This will move content around in the timeline', event.clientX, event.clientY);
+                menu.fadableMenu(
+                '<div style="display:flex;flex-direction:column;align-items:center;width:14em;text-align:center">\
+                    <i data-feather="alert-circle" style="margin-bottom:10px"></i>\
+                    This action will move clips around the timeline\
+                </div>', 
+                event.clientX, event.clientY);
             }else{
                 menu.fadableMenu('<i data-feather="alert-circle"></i>', event.clientX, event.clientY);
             }
