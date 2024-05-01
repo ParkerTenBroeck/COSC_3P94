@@ -76,6 +76,12 @@ class VideoPlayer{
             let m = zeroPad(Math.floor((t / 60) % 60), 2);
             let h = zeroPad(Math.floor((t / (60 * 60)) % 100), 2);
             document.getElementById("time").innerHTML = h+"."+m+"."+s+":"+ms;
+
+            document.getElementById("timeline-scrub").style.left = t + "em";
+        });
+
+        document.getElementById("timeline-scrub").addEventListener("drag", (e) => {
+            console.log(e);
         })
 
 
@@ -122,6 +128,8 @@ class VideoPlayer{
                 }
             }
         });
+
+        this.setTime(0);
     }
 
     setPlay(){

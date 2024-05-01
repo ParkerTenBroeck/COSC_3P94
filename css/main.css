@@ -471,6 +471,42 @@
   display: block;
 }
 
+.timeline-scrub-settings {
+  height: 1em;
+}
+
+.timeline-scrub-container {
+  height: 1em;
+}
+
+.timeline-scrub {
+  position: relative;
+  background-color: #026ec1;
+  border-radius: 50%;
+  height: 0.75em;
+  width: 0.75em;
+  left: 30px;
+  top: 0.1em;
+}
+
+.timeline-scrub:hover {
+  outline-color: #d0d0d0;
+  outline-width: 2px;
+  outline-style: solid;
+  transition: 0.125s;
+}
+
+.timeline-scrub::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 0.125em;
+  height: calc(220px + 0.375em + 0.1em);
+  transform: translate(0.3125em, 10px);
+  z-index: 20;
+  background-color: #026ec1;
+}
+
 .separator-div-col {
   width: 2px;
   height: 100%;

@@ -238,3 +238,39 @@ $timeline-height: 110px;
 .timeline-section .timeline-dropdown:hover .gear-dropdown-content {
     display: block;
 }
+
+.timeline-scrub-settings{
+    height: 1em;
+}
+
+.timeline-scrub-container{
+    height: 1em;
+}
+.timeline-scrub{
+    position: relative;
+    background-color: $dropdown-hover-color;
+    border-radius: 50%;
+    height: 0.75em;
+    width: 0.75em;
+    left: 30px;
+    top: 0.1em;
+}
+
+.timeline-scrub:hover{
+    outline-color: $primary-text-color;
+    outline-width: 2px;
+    outline-style: solid;
+    transition: 0.125s;
+}
+
+.timeline-scrub::before {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    width: 0.125em;
+    height: calc($timeline-height*2 + 0.75em / 2 + 0.1em);
+    transform: translate(calc(0.75em / 2 - 0.125em / 2), 10px);
+    z-index:20;
+    background-color: $dropdown-hover-color;
+    // border:1px solid green; /* for demo purposes */ 
+}
