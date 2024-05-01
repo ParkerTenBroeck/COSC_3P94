@@ -77,12 +77,28 @@ class VideoPlayer{
             let h = zeroPad(Math.floor((t / (60 * 60)) % 100), 2);
             document.getElementById("time").innerHTML = h+"."+m+"."+s+":"+ms;
 
-            document.getElementById("timeline-scrub").style.left = t + "em";
+            document.getElementById("timeline-scrub").style.left = (t*10) + "px";
         });
 
-        document.getElementById("timeline-scrub").addEventListener("drag", (e) => {
-            console.log(e);
-        })
+        let listener = (e) => {
+            const container = document.getElementById("scrub-container");
+            const scrub = document.getElementById("timeline-scrub");
+            const scroll = document.getElementById("timeline-scroll-area");
+
+            const value = (e.x - container.offsetLeft - scrub.offsetWidth / 2 + scroll.scrollLeft);
+            this.setTime(value / 10);
+            // document.getElementById("timeline-scrub").style.left =  + "px";
+        };
+
+        let listenerUp = (e) => {
+            document.removeEventListener("mousemove", listener);
+            document.removeEventListener("mouseup", listenerUp);
+        };
+
+        document.getElementById("timeline-scrub").addEventListener("mousedown", (e) => {
+            document.addEventListener("mousemove", listener);
+            document.addEventListener("mouseup", listenerUp);
+        });
 
 
         this.interval = setInterval(function() {
