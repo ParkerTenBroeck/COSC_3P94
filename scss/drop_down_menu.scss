@@ -1,2 +1,80 @@
 @import "colors";
 
+/* The dropdown container */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: $primary-text-color;
+    padding: 9px 10px;
+    background-color: inherit;
+    font-family: inherit;
+    /* Important for vertical align on mobile phones */
+    margin: 0;
+    /* Important for vertical align on mobile phones */
+}
+
+.dropdown .dropbtn:hover {
+    background-color: $filemenu-hover-color;
+}
+
+.dropdown .dropbtn:active {
+    background-color: $dropdown-hover-color;
+}
+
+.dropdown.active .dropbtn:active {
+    background-color: $dropdown-hover-color;
+}
+
+
+/* Add a red background color to filebar links on hover */
+a.active,
+.dropdown.active .dropbtn {
+    background-color: $filemenu-hover-color;
+}
+
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: $dropdown-background-color;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 6px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: $primary-text-color;
+    /* padding: 12px 16px; */
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: $filemenu-hover-color;
+    border-radius: 6px;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:active {
+    background-color: $dropdown-hover-color;
+    border-radius: 6px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown.active .dropdown-content {
+    display: block;
+}

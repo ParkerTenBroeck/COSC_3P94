@@ -201,12 +201,6 @@ $timeline-height: 110px;
     /* Important for vertical align on mobile phones */
 }
 
-/* Add a red background color to filebar links on hover */
-.timeline-section a:hover,
-.dropdown:hover .dropbtn {
-    background-color: $filemenu-hover-color;
-}
-
 /* Dropdown content (hidden by default) */
 .timeline-section .gear-dropdown-content {
     display: none;

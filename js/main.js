@@ -3,6 +3,9 @@ import * as dragAndDrop from "./drag-and-drop.js";
 import "./feather-icons.js";
 import * as videoplayer from "./videoplayer.js";
 import * as gearMenu from "./gear-menu.js";
+import * as dropDown from "./drop-down-meun.js";
+
+export { resizable_area, dragAndDrop, videoplayer, gearMenu, dropDown };
 
 async function init(){
     // load all html 'parts'
@@ -37,6 +40,8 @@ async function init(){
     gearMenu.init();
 
     document.getElementById("blackout").style.display = 'none';
+
+    dropDown.init();
 }
 
 await init();

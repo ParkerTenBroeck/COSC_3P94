@@ -73,8 +73,6 @@ class VideoPlayer{
         const scrubKnob = document.getElementById("timeline-scrub");
         const timelineScrollArea = document.getElementById("timeline-scroll-area");
 
-        
-
         const setScrub = (t) => {
             scrubKnob.style.left = ((t)*10-timelineScrollArea.scrollLeft) + "px";
         };
