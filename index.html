@@ -9,79 +9,86 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
 <body>
+    <div id="project-page">
+        <div id="fadeable-menu" class="floating-menu hide"> bruh!</div>
 
-    <div id="fadeable-menu" class="floating-menu hide"> bruh!</div>
-
-    <div id="blackout" style='display:block;'></div>
-
-    <div id="transition-menu" class="transition-menu hide">
-        <div class="transition-menu-content">
-            <span class="title">Transition Settings</span>
-
-
-
-            <p style="justify-content: center;display: flex;">
-                Kind:
-                <select class="dropdown">
-                    <option value="volvo">Fade</option>
-                    <option value="saab">Bars</option>
-                    <option value="opel">Cut</option>
-                    <option value="audi">Start</option>
-                    <option value="audi">Pixels</option>
-                </select>
-            </p>
-
-            <p style="text-align: center;width: 100%;margin-bottom: 0;">Time</p>
-            
-            <input style="width: 180px" min="0" max="150" value="100" step="25" type="range" id="temp" name="temp" list="markers" />
-
-            <datalist id="markers" style="  display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            writing-mode: vertical-lr;
-            font-size: 13px;
-            width: 180px;">
-                <option value="0" label="0.0s"></option>
-                <option value="25" label="0.25s"></option>
-                <option value="50" label="0.5s"></option>
-                <option value="75" label="0.75s"></option>
-                <option value="100" label="1.0s"></option>
-                <option value="125" label="1.25s"></option>
-                <option value="150" label="1.5s"></option>
-            </datalist>
-
-              <div style="display:flex; flex-direction: row;margin-top: 1em;justify-content: center;">
-                <button id="transition-menu-cancel" style="margin-right: 5px;">Cancel</button>
-                <button id="transition-menu-ok">Ok</button>
-              </div>
-        </div>
-    </div>
+        <div id="blackout" style='display:block;'></div>
     
-    <div class="page-contents">
-        <div class="filebar loadable" src="parts/menu.html">
-            Loading...
-        </div>
-
+        <div id="transition-menu" class="transition-menu hide">
+            <div class="transition-menu-content">
+                <span class="title">Transition Settings</span>
     
-        <div style="flex: 1 1 auto;" class="horizontal-div-split">
-            <div class="horizontal-div-split">
-                <div class="horizontal-div-split-top" style="height: 75%;">
-                    <div class="vertical-div-split">
-                        <div class="vertical-div-split-left media-section loadable" src="parts/media-section.html" style="width: 48%;">
-                            Loading...
+    
+    
+                <div style="justify-content: center;align-items: center;display: flex;flex-direction: row;">
+                    <p>Kind:</p>
+                    <div class="dropdown options" style="align-items: center;">
+                        <button class="dropbtn">Fade<i class="arrow down" style="margin-left: 0.3em;margin-right: 0.2em;"></i></button>
+                        <div class="dropdown-content">
+                            <a href="#">Fade</a>
+                            <a href="#">Bars</a>
+                            <a href="#">Cut</a>
+                            <a href="#">Start</a>
+                            <a href="#">Pixels</a>
                         </div>
-                        <div class = "spliter-div-col"></div>
-                        <div class="vertical-div-split-right player-section loadable" src="parts/videoplayer-section.html">
-                            Loading...                    
-                        </div>
-                    </div>            
+                    </div>
                 </div>
-                <div class = "spliter-div-row"></div>
-                <div  class="horizontal-div-split-bottom timeline-section loadable" src="parts/timeline-section.html">
-                    Loading...
+    
+                <p style="text-align: center;width: 100%;margin-bottom: 0;">Time</p>
+                
+                <input style="width: 180px" min="0" max="150" value="100" step="25" type="range" id="temp" name="temp" list="markers" />
+    
+                <datalist id="markers" style="  display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                writing-mode: vertical-lr;
+                font-size: 13px;
+                width: 180px;">
+                    <option value="0" label="0.0s"></option>
+                    <option value="25" label="0.25s"></option>
+                    <option value="50" label="0.5s"></option>
+                    <option value="75" label="0.75s"></option>
+                    <option value="100" label="1.0s"></option>
+                    <option value="125" label="1.25s"></option>
+                    <option value="150" label="1.5s"></option>
+                </datalist>
+    
+                  <div style="display:flex; flex-direction: row;margin-top: 1em;justify-content: center;">
+                    <button id="transition-menu-cancel" style="margin-right: 5px;">Cancel</button>
+                    <button id="transition-menu-ok">Ok</button>
+                  </div>
+            </div>
+        </div>
+        
+        <div class="page-contents">
+            <div class="filebar loadable" src="parts/menu.html">
+                Loading...
+            </div>
+    
+        
+            <div style="flex: 1 1 auto;" class="horizontal-div-split">
+                <div class="horizontal-div-split">
+                    <div class="horizontal-div-split-top" style="height: 75%;">
+                        <div class="vertical-div-split">
+                            <div class="vertical-div-split-left media-section loadable" src="parts/media-section.html" style="width: 48%;">
+                                Loading...
+                            </div>
+                            <div class = "spliter-div-col"></div>
+                            <div class="vertical-div-split-right player-section loadable" src="parts/videoplayer-section.html">
+                                Loading...                    
+                            </div>
+                        </div>            
+                    </div>
+                    <div class = "spliter-div-row"></div>
+                    <div  class="horizontal-div-split-bottom timeline-section loadable" src="parts/timeline-section.html">
+                        Loading...
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    
+    <div id="project-creation">
     </div>
 
 </body>      
