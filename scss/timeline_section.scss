@@ -157,6 +157,8 @@ $timeline-height: 110px;
     display: flex;
     flex-direction: column;
     width: max-content;
+    background-color: $badge-background;
+    z-index: 10;
 }
 
 .timeline-section .timeline-editable-rows {
@@ -239,12 +241,11 @@ $timeline-height: 110px;
     display: block;
 }
 
-.timeline-scrub-settings{
-    height: 1em;
-}
-
 .timeline-scrub-container{
     height: 1em;
+    min-height: 1em;
+    max-height: 1em;
+    width: 100%;
 }
 .timeline-scrub{
     position: relative;
@@ -254,6 +255,7 @@ $timeline-height: 110px;
     width: 0.75em;
     left: 30px;
     top: 0.1em;
+    z-index: 5;
 }
 
 .timeline-scrub:hover{
@@ -263,6 +265,17 @@ $timeline-height: 110px;
     transition: 0.125s;
 }
 
+.timeline-scrub-settings{
+    width: $timeline-height;
+    max-width: $timeline-height;
+    min-width: $timeline-height;
+    background-color: $badge-background;
+    border-right-color: $filemenu-border;
+    border-right-style: solid;
+    border-right-width: 2px;
+    z-index: 20;
+}
+
 .timeline-scrub::before {
     content: '';
     position: absolute;
@@ -270,7 +283,7 @@ $timeline-height: 110px;
     width: 0.125em;
     height: calc($timeline-height*2 + 0.75em / 2 + 0.1em);
     transform: translate(calc(0.75em / 2 - 0.125em / 2), 10px);
-    z-index:20;
+    z-index:5;
     background-color: $dropdown-hover-color;
     // border:1px solid green; /* for demo purposes */ 
 }

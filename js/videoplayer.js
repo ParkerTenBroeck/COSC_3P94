@@ -68,6 +68,21 @@ class VideoPlayer{
             myself.videoPlayer.pause();
         });
 
+
+        const scrubContainer = document.getElementById("scrub-container");
+        const scrubKnob = document.getElementById("timeline-scrub");
+        const timelineScrollArea = document.getElementById("timeline-scroll-area");
+
+        
+
+        const setScrub = (t) => {
+            scrubKnob.style.left = ((t)*10-timelineScrollArea.scrollLeft) + "px";
+        };
+
+        timelineScrollArea.addEventListener("scroll", (e) => {
+            setScrub(myself.videoPlayer.currentTime)  
+        });
+
         const zeroPad = (num, places) => String(num).padStart(places, '0')
         this.registerTimeUpdate((t) => {
             
@@ -77,17 +92,12 @@ class VideoPlayer{
             let h = zeroPad(Math.floor((t / (60 * 60)) % 100), 2);
             document.getElementById("time").innerHTML = h+"."+m+"."+s+":"+ms;
 
-            document.getElementById("timeline-scrub").style.left = (t*10) + "px";
+            setScrub(t);
         });
 
         let listener = (e) => {
-            const container = document.getElementById("scrub-container");
-            const scrub = document.getElementById("timeline-scrub");
-            const scroll = document.getElementById("timeline-scroll-area");
-
-            const value = (e.x - container.offsetLeft - scrub.offsetWidth / 2 + scroll.scrollLeft);
+            const value = (e.x - scrubContainer.offsetLeft - scrubKnob.offsetWidth / 2 + timelineScrollArea.scrollLeft);
             this.setTime(value / 10);
-            // document.getElementById("timeline-scrub").style.left =  + "px";
         };
 
         let listenerUp = (e) => {
