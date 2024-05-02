@@ -42,6 +42,45 @@ async function init(){
     document.getElementById("blackout").style.display = 'none';
 
     dropDown.init();
+
+
+    function importData(handler) {
+        let input = document.createElement('input');
+        input.type = 'file';
+        input.onchange = _ => {
+          // you can use this method to get file and perform respective operations
+                  for(const file of input.files){
+                    handler(file);
+                  }
+              };
+        input.click();
+        
+      }
+    document.getElementById("file-import").addEventListener("click", (e) => {
+        importData((file) => {
+            addImportedMedia(file.name, "film");
+            dropDown.closeMenus();
+
+        });
+    });
+
+    for(let i = 0; i < 5; i ++)
+        addImportedMedia("video" + (i+1) + ".mp4", "film");
+
+    for(let i = 0; i < 5; i ++)
+        addImportedMedia("song" + (i+1) + ".mp4", "music");
+}
+
+export function addImportedMedia(name, kind){
+    document.getElementById("imported-files").innerHTML +=
+        `
+        <div draggable="true" class="file-preview tooltip" data-length-secs=20>
+            <span class="tooltiptext">${name}</span>    
+            <i data-feather="${kind}" class="icon"></i>
+            <p class="text">${name}</p>
+        </div>
+    `;
+    feather.replace();
 }
 
 await init();

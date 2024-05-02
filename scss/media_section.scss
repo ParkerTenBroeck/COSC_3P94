@@ -31,6 +31,9 @@
     text-align: center;
     padding: 0;
     margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
 }
 
 .media-section .imported-files .file-preview .icon{
