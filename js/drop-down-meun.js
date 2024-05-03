@@ -2,14 +2,9 @@
 
 export function init(){
     for(const dropDown of document.querySelectorAll(".dropdown")){
-        console.log(dropDown);
-        try{
-            dropDown.querySelector(".dropbtn").addEventListener("click", (e) => {
-                dropDown.classList.toggle("active");
-            });
-        }catch(e){
-
-        }
+        dropDown.querySelector(".dropbtn").addEventListener("click", (e) => {
+            dropDown.classList.toggle("active");
+        });
     }    
 
     for(const optional of document.querySelectorAll(".dropdown.options")){

@@ -49,19 +49,58 @@ async function init(){
         closeProject();
     });
 
+    document.getElementById("open-image-file").addEventListener("click", (e) => {
+        importData(null);
+    });
 
-    function importData(handler) {
-        let input = document.createElement('input');
-        input.type = 'file';
-        input.onchange = _ => {
-          // you can use this method to get file and perform respective operations
-                  for(const file of input.files){
-                    handler(file);
-                  }
-              };
-        input.click();
-        
-      }
+    function createProjectEvent(e){
+        if(document.getElementById("create-project-menu").classList.contains("hide")) return;
+        var name = document.getElementById("project-name-input").value ;
+        if(!(name.length === 0)){
+            if(document.getElementById("create-project-title").innerText == "Create Project"){
+                document.getElementById("create-project-menu").classList.add("hide");
+                createProject(name, "https://static.thenounproject.com/png/2616533-200.png");
+            }else{
+                const old_name = document.getElementById("project-name").innerText;
+                document.getElementById("project-name").innerText = name;
+                document.getElementById("create-project-menu").classList.add("hide");
+
+            }
+        }else{
+            fadableMenu("Name can't be empty!", e.x, e.y);
+        }
+    }
+
+    document.getElementById("file-preferences").addEventListener("click", (e) => {
+        showProjectEdit();
+    })
+
+    document.getElementById("create-menu-ok").addEventListener("click", (e) => {
+        if(e.x == 0)return;
+        createProjectEvent(e);
+    });
+
+    document.getElementById("create-menu-cancel").addEventListener("click", (e) => {
+        document.getElementById("create-project-menu").classList.add("hide");
+    });
+
+    document.addEventListener('keyup', event => {
+        if (event.code === 'Escape') {    
+            document.getElementById("create-project-menu").classList.add("hide");
+        }
+        if (event.code === 'Enter') {    
+            const element = document.getElementById("project-name-input");
+            const bound = element.getBoundingClientRect();
+            createProjectEvent({x: bound.x,y: bound.y})
+        }
+      });
+  
+      document.addEventListener("mouseup", event => {
+        if (!document.getElementById("create-project-menu").firstElementChild.contains(event.target)){
+            document.getElementById("create-project-menu").classList.add("hide");
+        }
+      });
+ 
     document.getElementById("file-import").addEventListener("click", (e) => {
         importData((file) => {
             addImportedMedia(file.name, "film");
@@ -79,10 +118,41 @@ async function init(){
 
     createProject("Funny Bunny", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fa0f6539-628c-40da-b459-c68b60138823/db64xmo-ad559f95-ca26-420e-9a1e-7532e6e8a138.jpg/v1/fill/w_1280,h_723,q_75,strp/bugs_bunny_wallpaper_by_hopefulllover_db64xmo-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIzIiwicGF0aCI6IlwvZlwvZmEwZjY1MzktNjI4Yy00MGRhLWI0NTktYzY4YjYwMTM4ODIzXC9kYjY0eG1vLWFkNTU5Zjk1LWNhMjYtNDIwZS05YTFlLTc1MzJlNmU4YTEzOC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.jzM9sT5uqKbs5JxJQohVMP_OJsDPjzTWSG-M75EoMTk");
     document.getElementById("project-create-button").addEventListener("click", (e) => {
-        // console.log(e);
-        fadableMenu("This will show a setup guide for initializing new projects", e.x, e.y);
+        showProjectCreate();
     })
 }
+
+export function showProjectCreate(){
+    let thing = document.getElementById("create-project-menu");
+    thing.classList.remove("hide");
+    document.getElementById("create-menu-ok").innerText = "Create";
+    document.getElementById("create-project-title").innerText = "Create Project";
+}
+
+export function showProjectEdit(){
+    let thing = document.getElementById("create-project-menu");
+    thing.classList.remove("hide");
+    document.getElementById("create-menu-ok").innerText = "Save";
+    document.getElementById("create-project-title").innerText = "Edit Project";
+    const old_name = document.getElementById("project-name").innerText;
+    document.getElementById("project-name-input").value = old_name;
+}
+
+export function importData(handler) {
+    let input = document.createElement('input');
+    input.type = 'file';
+    input.onchange = _ => {
+      // you can use this method to get file and perform respective operations
+              for(const file of input.files){
+                if(handler != null)
+                    handler(file);
+              }
+          };
+    input.click();
+    
+  }
+
+
 
 export function closeProject(){
     document.getElementById("project-page").style.display = "none";
@@ -93,6 +163,7 @@ export function closeProject(){
 
 
 export function openProject(name) {
+    document.getElementById("project-name").innerText = name;
     document.getElementById("project-page").style.display = "";
     document.getElementById("project-creation").style.display = "none";
 }

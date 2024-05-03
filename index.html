@@ -1,108 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>Shideo Editor</title>
-        <link rel="icon" type="image/x-icon" href="images/favicon.png">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shideo Editor</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
 <body>
 
-        <div id="blackout" style='display:block;'></div>
-    
-        <div id="transition-menu" class="transition-menu hide">
-            <div class="transition-menu-content">
-                <span class="title">Transition Settings</span>
-    
-    
-    
-                <div style="justify-content: center;align-items: center;display: flex;flex-direction: row;">
-                    <p>Kind:</p>
-                    <div class="dropdown options" style="align-items: center;">
-                        <button class="dropbtn">Fade<i class="arrow down" style="margin-left: 0.3em;margin-right: 0.2em;"></i></button>
-                        <div class="dropdown-content">
-                            <a href="#">Fade</a>
-                            <a href="#">Bars</a>
-                            <a href="#">Cut</a>
-                            <a href="#">Start</a>
-                            <a href="#">Pixels</a>
-                        </div>
+    <div id="blackout" style='display:block;'></div>
+
+    <div id="transition-menu" class="transition-menu hide">
+        <div class="transition-menu-content">
+            <span class="title">Transition Settings</span>
+
+
+
+            <div style="justify-content: center;align-items: center;display: flex;flex-direction: row;">
+                <p>Kind:</p>
+                <div class="dropdown options" style="align-items: center;">
+                    <button class="dropbtn">Fade<i class="arrow down"
+                            style="margin-left: 0.3em;margin-right: 0.2em;"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">Fade</a>
+                        <a href="#">Bars</a>
+                        <a href="#">Cut</a>
+                        <a href="#">Start</a>
+                        <a href="#">Pixels</a>
                     </div>
                 </div>
-    
-                <p style="text-align: center;width: 100%;margin-bottom: 0;">Time</p>
-                
-                <input style="width: 180px" min="0" max="150" value="100" step="25" type="range" id="temp" name="temp" list="markers" />
-    
-                <datalist id="markers" style="  display: flex;
+            </div>
+
+            <p style="text-align: center;width: 100%;margin-bottom: 0;">Time</p>
+
+            <input style="width: 180px" min="0" max="150" value="100" step="25" type="range" id="temp" name="temp"
+                list="markers" />
+
+            <datalist id="markers" style="  display: flex;
                 flex-direction: column;
                 justify-content: space-between;
                 writing-mode: vertical-lr;
                 font-size: 13px;
                 width: 180px;">
-                    <option value="0" label="0.0s"></option>
-                    <option value="25" label="0.25s"></option>
-                    <option value="50" label="0.5s"></option>
-                    <option value="75" label="0.75s"></option>
-                    <option value="100" label="1.0s"></option>
-                    <option value="125" label="1.25s"></option>
-                    <option value="150" label="1.5s"></option>
-                </datalist>
-    
-                  <div style="display:flex; flex-direction: row;margin-top: 1em;justify-content: center;">
-                    <button id="transition-menu-cancel" style="margin-right: 5px;">Cancel</button>
-                    <button id="transition-menu-ok">Ok</button>
-                  </div>
+                <option value="0" label="0.0s"></option>
+                <option value="25" label="0.25s"></option>
+                <option value="50" label="0.5s"></option>
+                <option value="75" label="0.75s"></option>
+                <option value="100" label="1.0s"></option>
+                <option value="125" label="1.25s"></option>
+                <option value="150" label="1.5s"></option>
+            </datalist>
+
+            <div style="display:flex; flex-direction: row;margin-top: 1em;justify-content: center;">
+                <button id="transition-menu-cancel" style="margin-right: 5px;">Cancel</button>
+                <button id="transition-menu-ok">Ok</button>
             </div>
         </div>
-        
-        <div id="project-page" class="page-contents" style="display: none;">
-            <div class="filebar loadable" src="parts/menu.html">
-                Loading...
+    </div>
+
+    <div id="create-project-menu" class="transition-menu hide">
+        <div class="transition-menu-content">
+            <span id="create-project-title" class="title">Create Project</span>
+
+
+
+            <div style="justify-content: center;align-items: center;display: flex;flex-direction: row;">
+                <p style="margin-right: 0.5em;">Name:</p>
+                <input id="project-name-input" class="text-input" type="text">
             </div>
-    
-        
-            <div style="flex: 1 1 auto;" class="horizontal-div-split">
-                <div class="horizontal-div-split">
-                    <div class="horizontal-div-split-top" style="height: 75%;">
-                        <div class="vertical-div-split">
-                            <div class="vertical-div-split-left media-section loadable" src="parts/media-section.html" style="width: 48%;">
-                                Loading...
-                            </div>
-                            <div class = "spliter-div-col"></div>
-                            <div class="vertical-div-split-right player-section loadable" src="parts/videoplayer-section.html">
-                                Loading...                    
-                            </div>
-                        </div>            
+            <div style="justify-content: center;align-items: center;display: flex;flex-direction: row;">
+                <p style="margin-right: 0.5em;">Width: </p>
+                <input class="text-input" style="width: 5em;margin-right: 0.5em;" type="text">
+                <p style="margin-right: 0.5em;">Height: </p>
+                <input class="text-input" style="width: 5em;margin-right: 0.5em;" type="text">
+            </div>
+            <div style="justify-content: center;align-items: center;display: flex;flex-direction: row;">
+                <p style="margin-right: 0.5em;">Image: </p>
+                <button id="open-image-file">Open</button>
+
+            </div>
+
+
+            <div style="display:flex; flex-direction: row;margin-top: 1em;justify-content: center;">
+                <button id="create-menu-cancel" style="margin-right: 5px;">Cancel</button>
+                <button id="create-menu-ok">Create</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="project-page" class="page-contents" style="display: none;">
+        <div class="filebar loadable" src="parts/menu.html">
+            Loading...
+        </div>
+
+
+        <div style="flex: 1 1 auto;" class="horizontal-div-split">
+            <div class="horizontal-div-split">
+                <div class="horizontal-div-split-top" style="height: 75%;">
+                    <div class="vertical-div-split">
+                        <div class="vertical-div-split-left media-section loadable" src="parts/media-section.html"
+                            style="width: 48%;">
+                            Loading...
+                        </div>
+                        <div class="spliter-div-col"></div>
+                        <div class="vertical-div-split-right player-section loadable"
+                            src="parts/videoplayer-section.html">
+                            Loading...
+                        </div>
                     </div>
-                    <div class = "spliter-div-row"></div>
-                    <div  class="horizontal-div-split-bottom timeline-section loadable" src="parts/timeline-section.html">
-                        Loading...
-                    </div>
+                </div>
+                <div class="spliter-div-row"></div>
+                <div class="horizontal-div-split-bottom timeline-section loadable" src="parts/timeline-section.html">
+                    Loading...
                 </div>
             </div>
         </div>
-    
+    </div>
+
+
     <div id="project-creation" class="project-creation">
         <div class="filebar">
             <p class="right" style="user-select: none;padding:0;height:100%;padding-right:5px">
                 <i data-feather="aperture" style="height:100%"></i>
             </p>
-              
-            <p class="center" id="project-name" style="user-select: none;">Shideo Editor</p>              
+
+            <p class="center" id="project-name" style="user-select: none;">Shideo Editor</p>
         </div>
         <h3 class="top-text">Projects</h3>
 
         <div id="project-list" class="imported-files">
             <div class="file-preview" id="project-create-button">
                 <i data-feather="plus" class="icon"></i>
-                <span class="text" style="user-select: none;">create</span>    
+                <span class="text" style="user-select: none;">create</span>
             </div>
         </div>
     </div>
 
-</body>      
-<script defer type="module" src="js/main.js"></script> 
-</html> 
+</body>
+<script defer type="module" src="js/main.js"></script>
+
+</html>
