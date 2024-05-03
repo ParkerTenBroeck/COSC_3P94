@@ -202,4 +202,4 @@ export function addImportedMedia(name, kind){
     feather.replace();
 }
 
-await init();
+init();
