@@ -44,6 +44,11 @@ async function init(){
     dropDown.init();
 
 
+    document.getElementById("file-close").addEventListener("click", (e) => {
+        closeProject();
+    });
+
+
     function importData(handler) {
         let input = document.createElement('input');
         input.type = 'file';
@@ -69,6 +74,46 @@ async function init(){
 
     for(let i = 0; i < 5; i ++)
         addImportedMedia("song" + (i+1) + ".mp4", "music");
+
+
+    createProject("Funny Bunny", "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/fa0f6539-628c-40da-b459-c68b60138823/db64xmo-ad559f95-ca26-420e-9a1e-7532e6e8a138.jpg/v1/fill/w_1280,h_723,q_75,strp/bugs_bunny_wallpaper_by_hopefulllover_db64xmo-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIzIiwicGF0aCI6IlwvZlwvZmEwZjY1MzktNjI4Yy00MGRhLWI0NTktYzY4YjYwMTM4ODIzXC9kYjY0eG1vLWFkNTU5Zjk1LWNhMjYtNDIwZS05YTFlLTc1MzJlNmU4YTEzOC5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.jzM9sT5uqKbs5JxJQohVMP_OJsDPjzTWSG-M75EoMTk");
+}
+
+export function closeProject(){
+    document.getElementById("project-page").style.display = "none";
+    document.getElementById("project-creation").style.display = "";
+
+    videoplayer.videoplayer.setPaused();
+}
+
+
+export function openProject(name) {
+    document.getElementById("project-page").style.display = "";
+    document.getElementById("project-creation").style.display = "none";
+}
+
+function createElementFromHTML(htmlString) {
+    var div = document.createElement('div');
+    div.innerHTML = htmlString.trim();
+  
+    // Change this to div.childNodes to support multiple top-level nodes.
+    return div.firstChild;
+  }
+
+export function createProject(name, pictureSrc){
+    var thing = `
+    <div class="file-preview" id="project-create-button">
+        <img src="${pictureSrc}"  class="icon"></img>
+        <span class="text" style="user-select: none;">${name}</span>    
+    </div>`;
+    thing = createElementFromHTML(thing);
+    thing.addEventListener("click", (e) => {
+        openProject(name);
+    });
+    var list = document.getElementById("project-list") 
+    list.querySelector("#project-create-button").insertAdjacentElement("beforebegin", thing);
+
+
 }
 
 export function addImportedMedia(name, kind){

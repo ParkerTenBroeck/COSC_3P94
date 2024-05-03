@@ -59,7 +59,7 @@
             </div>
         </div>
         
-        <div id="project-page" class="page-contents">
+        <div id="project-page" class="page-contents" style="display: none;">
             <div class="filebar loadable" src="parts/menu.html">
                 Loading...
             </div>
@@ -86,7 +86,22 @@
             </div>
         </div>
     
-    <div id="project-creation" style="display: none;">
+    <div id="project-creation" class="project-creation">
+        <div class="filebar">
+            <p class="right" style="user-select: none;padding:0;height:100%;padding-right:5px">
+                <i data-feather="aperture" style="height:100%"></i>
+            </p>
+              
+            <p class="center" id="project-name" style="user-select: none;">Shideo Editor</p>              
+        </div>
+        <h3 class="top-text">Projects</h3>
+
+        <div id="project-list" class="imported-files">
+            <div class="file-preview" id="project-create-button">
+                <i data-feather="plus" class="icon"></i>
+                <span class="text" style="user-select: none;">create</span>    
+            </div>
+        </div>
     </div>
 
 </body>      

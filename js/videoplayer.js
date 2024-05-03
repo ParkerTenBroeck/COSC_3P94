@@ -130,6 +130,9 @@ class VideoPlayer{
         this.videoPlayer.currentTime = 1;
 
         document.addEventListener('keyup', event => {
+            if(document.getElementById("project-page").style.display == "none"){
+                return;
+            }
             if (event.code === 'Space') {
                 if(myself.videoPlayer.paused)
                     myself.setPlay();
