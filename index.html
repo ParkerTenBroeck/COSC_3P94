@@ -23,12 +23,12 @@
             <div style="justify-content: center;align-items: center;display: flex;flex-direction: row;">
                 <p>Kind:</p>
                 <div class="dropdown options" style="align-items: center;">
-                    <button class="dropbtn">Fade<i class="arrow down"
+                    <button class="dropbtn">Cut<i class="arrow down"
                             style="margin-left: 0.3em;margin-right: 0.2em;"></i></button>
                     <div class="dropdown-content">
+                        <a href="#">Cut</a>
                         <a href="#">Fade</a>
                         <a href="#">Bars</a>
-                        <a href="#">Cut</a>
                         <a href="#">Start</a>
                         <a href="#">Pixels</a>
                     </div>
@@ -38,7 +38,7 @@
             <p style="text-align: center;width: 100%;margin-bottom: 0;">Time</p>
 
             <input style="width: 180px" min="0" max="150" value="100" step="25" type="range" id="temp" name="temp"
-                list="markers" />
+                list="markers">
 
             <datalist id="markers" style="  display: flex;
                 flex-direction: column;
@@ -141,6 +141,6 @@
     </div>
 
 </body>
-<script defer type="module" src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
 
 </html>
